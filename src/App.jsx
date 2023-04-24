@@ -1,9 +1,7 @@
-function App() {
-  return (
+const App = () => (
     <div className="App">
-      <h1>uuCookBook</h1>
+        <button type="button" className="btn btn-outline-primary">Primary</button>
     </div>
-  );
-}
+);
 
 export default App;
