@@ -28,15 +28,6 @@
       "always"
     ],
     "eol-last": 2,
-    "prefer-arrow-functions/prefer-arrow-functions": [
-      "error",
-      {
-        "classPropertiesAllowed": true,
-        "disallowPrototype": false,
-        "returnStyle": "unchanged",
-        "singleReturnOnly": false
-      }
-    ],
     "react/function-component-definition": [
       2,
       {
