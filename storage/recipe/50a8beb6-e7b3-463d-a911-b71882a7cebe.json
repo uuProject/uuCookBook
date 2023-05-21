@@ -1,0 +1,34 @@
+{
+	"uniqueIdentifier": "50a8beb6-e7b3-463d-a911-b71882a7cebe",
+	"name": "Piña Colada",
+	"description": "V shakeru smíchejte smetanu, rum, ananasový džus a kokosový sirup v předepsaném množství. Zamíchejte a dostanete kouzlo s názvem Piňa Colada. Nakonec ozdobte lístky máty.",
+	"noOfIngrediences": 4,
+	"servings": 1,
+	"image": "50a8beb6-e7b3-463d-a911-b71882a7cebe.jpg",
+	"ingredients": [
+		{
+			"name": "Kubánský rum",
+			"description": "",
+			"amount": 4,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Kokosový sirup",
+			"description": "",
+			"amount": 1,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Ananasový džus",
+			"description": "",
+			"amount": 8,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Smetana",
+			"description": "",
+			"amount": 2,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		}
+	]
+}

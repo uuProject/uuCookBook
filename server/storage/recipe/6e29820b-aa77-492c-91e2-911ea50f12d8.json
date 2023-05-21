@@ -1,0 +1,52 @@
+{
+	"uniqueIdentifier": "6e29820b-aa77-492c-91e2-911ea50f12d8",
+	"name": "Long Island Iced Tea",
+	"description": "Všechny ingredience s ledem dáme do sklenice, ve které vše promícháme. Scedíme do koktejlové sklenice a podáváme.",
+	"noOfIngrediences": 7,
+	"servings": 1,
+	"image": "6e29820b-aa77-492c-91e2-911ea50f12d8.jpg",
+	"ingredients": [
+		{
+			"name": "Gin",
+			"description": "",
+			"amount": 2,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Bílý rum",
+			"description": "",
+			"amount": 2,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Vodka",
+			"description": "",
+			"amount": 2,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Triple sec",
+			"description": "",
+			"amount": 2,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Sladký sirup",
+			"description": "cukr a voda v poměru 1:1",
+			"amount": 2,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Citrónová šťáva",
+			"description": "",
+			"amount": 2,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Coca Cola",
+			"description": "",
+			"amount": "",
+			"unitUniqueIdentifier": "a2c6027f-bb9a-47fd-b4b0-65869e8b5fb1"
+		}
+	]
+}

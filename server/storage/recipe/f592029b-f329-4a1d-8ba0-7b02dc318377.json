@@ -1,0 +1,28 @@
+{
+	"uniqueIdentifier": "f592029b-f329-4a1d-8ba0-7b02dc318377",
+	"name": "French Martini Cocktail",
+	"description": "Všechny ingredience s ledem dáme do sklenice, ve které vše promícháme. Scedíme do koktejlové sklenice a podáváme.",
+	"noOfIngrediences": 3,
+	"servings": 1,
+	"image": "f592029b-f329-4a1d-8ba0-7b02dc318377.jpg",
+	"ingredients": [
+		{
+			"name": "Vodka",
+			"description": "",
+			"amount": 4.5,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Malinový likér",
+			"description": "",
+			"amount": 1.5,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Ananasový džus",
+			"description": "",
+			"amount": 1.5,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		}
+	]
+}
