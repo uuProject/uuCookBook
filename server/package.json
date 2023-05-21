@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --fix",
-    "start": "node src/server.js"
+    "start": "nodemon --ignore storage src/server.js"
   },
   "author": "",
   "license": "ISC",
