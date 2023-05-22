@@ -11,7 +11,7 @@ app.get('/status', (req, res) => {
   res.status(200).send('');
 });
 
-app.get('/recipe', (_, res) => {
+app.get('/recipes', (_, res) => {
   res.setHeader('Content-Type', 'application/json');
 
   const recipes = getRecipes(`${process.env.STORAGE_PATH}/recipe`);
