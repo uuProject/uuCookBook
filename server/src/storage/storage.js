@@ -1,8 +1,9 @@
 import * as fs from 'fs';
 
-export const getRecipes = (path) => {
-  const files = fs.readdirSync(path);
+export const getRecipes = async (path) => {
   const recipes = [];
+
+  const files = fs.readdirSync(path);
 
   for (let i = 0; i < files.length; i += 1) {
     try {
@@ -12,7 +13,7 @@ export const getRecipes = (path) => {
       console.error(err);
 
       if (err.code !== 'ENOENT') {
-        return err;
+        throw err;
       }
     }
   }
