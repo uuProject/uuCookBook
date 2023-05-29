@@ -1,15 +1,16 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
+import { recipesRouter, statusRouter } from './router/router.js';
 
 dotenv.config();
 
 const app = express();
 const port = process.env.HTTP_SERVER_PORT;
 
-app.get('/status', (req, res) => {
-  res.status(200).send('');
-});
+app.get('/status', statusRouter);
+
+app.get('/recipes', recipesRouter);
 
 app.listen(port, () => {
-  console.log(`app listening on port ${port}`);
+  console.log(`http server listening on port ${port}`);
 });

@@ -6,14 +6,16 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --fix",
+    "lint": "eslint 'src/**/*.js'",
+    "lint-fix": "eslint 'src/**/*.js' --fix",
     "start": "nodemon --ignore storage src/server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "fs.js": "^0.0.1"
   },
   "devDependencies": {
     "eslint": "^8.40.0",
