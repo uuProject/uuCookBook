@@ -1,8 +1,8 @@
 {
 	"uniqueIdentifier": "9b14e17b-35cd-4c48-8cdc-ff460dca7550",
 	"name": "Aperol Spritz",
-	"description": "Ingredience opatrně nalijte do panáku skrze kávovou lžičku, tak, aby zůstaly nepromíchané. A to přesně v tomto pořadí: 1. likér Kahlúa, 2. likér Baileys, a nakonec 3. Grand Marnier. Těsně před konzumací zapálíme zapalovačem. Podáváme s tlustým brčkem.",
-	"noOfIngrediences": 3,
+	"description": "Carefully pour the ingredients into the shot through a coffee spoon, so that they remain unmixed. And in this exact order: 1. Kahlúa liqueur, 2. Baileys liqueur, and finally 3. Grand Marnier. Light with a lighter just before consumption. Serve with a thick straw.",
+	"prepTime": 50,
 	"servings": 1,
 	"image": "9b14e17b-35cd-4c48-8cdc-ff460dca7550.jpg",
 	"ingredients": [

@@ -1,8 +1,8 @@
 {
 	"uniqueIdentifier": "7bc2cd13-f872-41b3-94b7-9dd2e17e016b",
 	"name": "Long Island Iced Tea",
-	"description": "Shaker naplňte kostkami ledu, přidejte všechny ingredience a důkladně protřepejte. Přes síto nalijte do sklenice typu highball a ozdobte ananasem s třešničkou.",
-	"noOfIngrediences": 7,
+	"description": "Fill the shaker with ice cubes, add all the ingredients and shake thoroughly. Pour through a sieve into a highball glass and garnish with pineapple and cherry.",
+	"prepTime": 30,
 	"servings": 1,
 	"image": "7bc2cd13-f872-41b3-94b7-9dd2e17e016b.jpg",
 	"ingredients": [
@@ -13,7 +13,7 @@
 			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
 		},
 		{
-			"name": "Cherry likér",
+			"name": "Cherry liqueur",
 			"description": "",
 			"amount": 1.5,
 			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
@@ -37,13 +37,13 @@
 			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
 		},
 		{
-			"name": "Ananasový džus",
+			"name": "Pineapple juice",
 			"description": "",
 			"amount": 12,
 			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
 		},
 		{
-			"name": "Čerstvý limetkový džus",
+			"name": "Fresh lime juice",
 			"description": "",
 			"amount": 1.5,
 			"unitUniqueIdentifier": "a2c6027f-bb9a-47fd-b4b0-65869e8b5fb1"

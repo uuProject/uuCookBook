@@ -1,25 +1,25 @@
 {
 	"uniqueIdentifier": "c4c9733f-a33a-4201-99b1-2eae7e482176",
 	"name": "Daiquiri",
-	"description": "Zaplňte tak polovinu shakeru ledem a vymačkejte do koktejlové sklenky limetku. Poté do shakeru odměřte všechny suroviny a pořádně protřepejte. Nakonec nápoj slijte přes sítko do sklenky s připravenou šťávou.",
-	"noOfIngrediences": 3,
+	"description": "Fill half of the shaker with ice and squeeze a lime into the cocktail glass. Then measure all the ingredients into the shaker and shake well. Finally, pour the drink through a strainer into a glass with the prepared juice.",
+	"prepTime": 15,
 	"servings": 1,
 	"image": "c4c9733f-a33a-4201-99b1-2eae7e482176.jpg",
 	"ingredients": [
 		{
-			"name": "Bílý rum",
+			"name": "White rum",
 			"description": "",
 			"amount": 4.5,
 			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
 		},
 		{
-			"name": "Limetkový džus",
+			"name": "Lime juice",
 			"description": "",
 			"amount": 2,
 			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
 		},
 		{
-			"name": "Cukrový sirup",
+			"name": "Sugar syrup",
 			"description": "",
 			"amount": 0.5,
 			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
