@@ -48,11 +48,18 @@ const Navbar = () => {
           </ul>
           <form className="d-flex" role="search">
             <input className="form-control me-1" type="search" placeholder="Search" aria-label="Search" onChange={handleChange} value={searchInput} />
-            <button className="btn btn-outline-primary" type="submit" onClick={handleSubmit} aria-label="Search">
-              <SearchOutlined style={{
-                verticalAlign: 'middle',
+            <button
+              className="btn btn-outline-primary"
+              type="submit"
+              onClick={handleSubmit}
+              aria-label="Search"
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
-              />
+            >
+              <SearchOutlined />
             </button>
           </form>
         </div>
