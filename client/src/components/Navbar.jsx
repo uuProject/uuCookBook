@@ -13,24 +13,32 @@ const Navbar = () => {
   ];
 
   const [activeItemName, setActiveItemName] = useState('');
-  const [searchInput, setSearchInput] = useState('');
+  const [searchInputValue, setsearchInputValue] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmitSearchClick = (event) => {
     event.preventDefault();
-    if (searchInput.length > 0) {
-      console.log(searchInput);
+
+    if (searchInputValue.length > 0) {
+      console.log(searchInputValue);
     }
   };
 
   const handleChange = (event) => {
     event.preventDefault();
-    setSearchInput(event.target.value);
+
+    setsearchInputValue(event.target.value);
   };
 
   return (
     <nav className="navbar navbar-expand navbar-light bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/#" onClick={() => setActiveItemName('')}>Cook Book</a>
+        <a
+          className="navbar-brand"
+          href="/#"
+          onClick={() => setActiveItemName('')}
+        >
+          Cook Book
+        </a>
         <div className="collapse navbar-collapse mx-2d-flex justify-content-between" id="navbarSupportedContent">
           <ul className="navbar-nav">
             {items.map(({ name, link }) => (
@@ -46,8 +54,21 @@ const Navbar = () => {
             ))}
           </ul>
           <form className="d-flex" role="search">
-            <input className="form-control me-1" type="search" placeholder="Search" aria-label="Search" onChange={handleChange} value={searchInput} />
-            <button className="btn btn-outline-primary" type="submit" onClick={handleSubmit}>Search</button>
+            <input
+              className="form-control me-1"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              onChange={(event) => handleChange(event)}
+              value={searchInputValue}
+            />
+            <button
+              className="btn btn-outline-primary"
+              type="submit"
+              onClick={(event) => handleSubmitSearchClick(event)}
+            >
+              Search
+            </button>
           </form>
         </div>
       </div>
