@@ -2,7 +2,7 @@
 	"uniqueIdentifier": "600fde01-b5c3-4dca-96df-8ee82fbf6a33",
 	"name": "Aperol Spritz",
 	"description": "Mix the drink in a large wine glass with ice cubes. Pour the Aperol first, add the Prosecco, then add the soda water. Add an orange peel or a sprig of thyme for decoration.",
-	"prepTime": 20,
+	"preparationTime": 20,
 	"servings": 1,
 	"image": "600fde01-b5c3-4dca-96df-8ee82fbf6a33.jpg",
 	"ingredients": [

@@ -2,7 +2,7 @@
 	"uniqueIdentifier": "6e29820b-aa77-492c-91e2-911ea50f12d8",
 	"name": "Long Island Iced Tea",
 	"description": "Put all the ingredients with ice in a glass, in which we mix everything. Strain into a cocktail glass and serve.",
-	"prepTime": 45,
+	"preparationTime": 45,
 	"servings": 1,
 	"image": "6e29820b-aa77-492c-91e2-911ea50f12d8.jpg",
 	"ingredients": [
@@ -45,7 +45,7 @@
 		{
 			"name": "Coca Cola",
 			"description": "",
-			"amount": "",
+			"amount": 0,
 			"unitUniqueIdentifier": "a2c6027f-bb9a-47fd-b4b0-65869e8b5fb1"
 		}
 	]

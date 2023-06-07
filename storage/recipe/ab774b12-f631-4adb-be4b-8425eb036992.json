@@ -2,7 +2,7 @@
 	"uniqueIdentifier": "ab774b12-f631-4adb-be4b-8425eb036992",
 	"name": "Mai Tai",
 	"description": "Add all ingredients and ice except dark rum and grenadine to a shaker. Shake briefly and pour into a glass. Finally, add ice and dark rum with grenadine and garnish.",
-	"prepTime": 20,
+	"preparationTime": 20,
 	"servings": 1,
 	"image": "ab774b12-f631-4adb-be4b-8425eb036992.jpg",
 	"ingredients": [

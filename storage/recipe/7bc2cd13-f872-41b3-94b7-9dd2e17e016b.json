@@ -2,7 +2,7 @@
 	"uniqueIdentifier": "7bc2cd13-f872-41b3-94b7-9dd2e17e016b",
 	"name": "Long Island Iced Tea",
 	"description": "Fill the shaker with ice cubes, add all the ingredients and shake thoroughly. Pour through a sieve into a highball glass and garnish with pineapple and cherry.",
-	"prepTime": 30,
+	"preparationTime": 30,
 	"servings": 1,
 	"image": "7bc2cd13-f872-41b3-94b7-9dd2e17e016b.jpg",
 	"ingredients": [

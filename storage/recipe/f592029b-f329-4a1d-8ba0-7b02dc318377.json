@@ -2,7 +2,7 @@
 	"uniqueIdentifier": "f592029b-f329-4a1d-8ba0-7b02dc318377",
 	"name": "French Martini Cocktail",
 	"description": "Put all the ingredients with ice in a glass, in which we mix everything. Strain into a cocktail glass and serve.",
-	"prepTime": 15,
+	"preparationTime": 15,
 	"servings": 1,
 	"image": "f592029b-f329-4a1d-8ba0-7b02dc318377.jpg",
 	"ingredients": [
