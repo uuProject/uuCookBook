@@ -13,7 +13,7 @@ const Navbar = () => {
   ];
 
   const [activeItemName, setActiveItemName] = useState('');
-  const [searchInputValue, setsearchInputValue] = useState('');
+  const [searchInputValue, setSearchInputValue] = useState('');
 
   const handleSubmitSearchClick = (event) => {
     event.preventDefault();
