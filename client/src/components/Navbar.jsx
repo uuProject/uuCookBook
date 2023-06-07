@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SearchOutlined } from '@ant-design/icons';
 
 const Navbar = () => {
   const items = [
@@ -54,7 +55,7 @@ const Navbar = () => {
             ))}
           </ul>
           <form className="d-flex" role="search">
-            <input
+          <input
               className="form-control me-1"
               type="search"
               placeholder="Search"
@@ -65,9 +66,15 @@ const Navbar = () => {
             <button
               className="btn btn-outline-primary"
               type="submit"
-              onClick={(event) => handleSubmitSearchClick(event)}
+              onClick={handleSubmit}
+              aria-label="Search"
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
             >
-              Search
+              <SearchOutlined />
             </button>
           </form>
         </div>
