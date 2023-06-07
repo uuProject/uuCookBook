@@ -26,7 +26,7 @@ const Navbar = () => {
   const handleChange = (event) => {
     event.preventDefault();
 
-    setsearchInputValue(event.target.value);
+    setSearchInputValue(event.target.value);
   };
 
   return (
