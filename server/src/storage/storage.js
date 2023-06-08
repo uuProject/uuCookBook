@@ -20,3 +20,15 @@ export const getRecipes = async (path) => {
 
   return recipes;
 };
+
+export const updateRecipe = (path, id, body) => {
+  const filePath = `${path}/${id}.json`;
+  const data = JSON.stringify(body);
+
+  try {
+    fs.writeFile(filePath, data);
+    console.log('File updated successfully.');
+  } catch (error) {
+    throw new Error('Something went wrong...');
+  }
+};
