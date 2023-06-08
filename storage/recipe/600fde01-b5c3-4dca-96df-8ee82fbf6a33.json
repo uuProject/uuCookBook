@@ -1,0 +1,34 @@
+{
+	"uniqueIdentifier": "600fde01-b5c3-4dca-96df-8ee82fbf6a33",
+	"name": "Aperol Spritz",
+	"description": "Mix the drink in a large wine glass with ice cubes. Pour the Aperol first, add the Prosecco, then add the soda water. Add an orange peel or a sprig of thyme for decoration.",
+	"preparationTime": 20,
+	"servings": 1,
+	"image": "600fde01-b5c3-4dca-96df-8ee82fbf6a33.jpg",
+	"ingredients": [
+		{
+			"name": "Prosecco",
+			"description": "Dry",
+			"amount": 120,
+			"unitUniqueIdentifier": "a1c6b75f-5f97-487d-b921-4af22ccca926"
+		},
+		{
+			"name": "Aperol",
+			"description": "",
+			"amount": 80,
+			"unitUniqueIdentifier": "a1c6b75f-5f97-487d-b921-4af22ccca926"
+		},
+		{
+			"name": "Lime",
+			"description": "",
+			"amount": 1,
+			"unitUniqueIdentifier": "61d58893-bf43-4acd-8366-0f4ea5606502"
+		},
+		{
+			"name": "Soda water",
+			"description": "",
+			"amount": 40,
+			"unitUniqueIdentifier": "a1c6b75f-5f97-487d-b921-4af22ccca926"
+		}
+	]
+}

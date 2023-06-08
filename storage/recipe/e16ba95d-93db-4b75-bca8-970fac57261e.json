@@ -1,0 +1,40 @@
+{
+	"uniqueIdentifier": "e16ba95d-93db-4b75-bca8-970fac57261e",
+	"name": "Sex On The Beach",
+	"description": "Prepare a mixture of the listed ingredients in a shaker. Fill a highball glass about one-third full with ice and add the contents of a shaker. Finally, garnish with an orange slice.",
+	"preparationTime": 20,
+	"servings": 1,
+	"image": "e16ba95d-93db-4b75-bca8-970fac57261e.jpg",
+	"ingredients": [
+		{
+			"name": "Vodka",
+			"description": "",
+			"amount": 4,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Peach liqueur",
+			"description": "",
+			"amount": 2,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Orange juice",
+			"description": "",
+			"amount": 6,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Cranberry juice",
+			"description": "",
+			"amount": 6,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Ice cubes",
+			"description": "",
+			"amount": 0,
+			"unitUniqueIdentifier": "a2c6027f-bb9a-47fd-b4b0-65869e8b5fb1"
+		}
+	]
+}

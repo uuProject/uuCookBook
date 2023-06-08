@@ -1,0 +1,46 @@
+{
+	"uniqueIdentifier": "ab774b12-f631-4adb-be4b-8425eb036992",
+	"name": "Mai Tai",
+	"description": "Add all ingredients and ice except dark rum and grenadine to a shaker. Shake briefly and pour into a glass. Finally, add ice and dark rum with grenadine and garnish.",
+	"preparationTime": 20,
+	"servings": 1,
+	"image": "ab774b12-f631-4adb-be4b-8425eb036992.jpg",
+	"ingredients": [
+		{
+			"name": "Lime juice",
+			"description": "",
+			"amount": 5,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Curacao",
+			"description": "",
+			"amount": 5,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "White rum",
+			"description": "",
+			"amount": 5,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Almond syrup",
+			"description": "",
+			"amount": 5,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Dark rum",
+			"description": "",
+			"amount": 5,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Grenadina",
+			"description": "",
+			"amount": 1,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		}
+	]
+}

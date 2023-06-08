@@ -1,0 +1,28 @@
+{
+	"uniqueIdentifier": "c4c9733f-a33a-4201-99b1-2eae7e482176",
+	"name": "Daiquiri",
+	"description": "Fill half of the shaker with ice and squeeze a lime into the cocktail glass. Then measure all the ingredients into the shaker and shake well. Finally, pour the drink through a strainer into a glass with the prepared juice.",
+	"preparationTime": 15,
+	"servings": 1,
+	"image": "c4c9733f-a33a-4201-99b1-2eae7e482176.jpg",
+	"ingredients": [
+		{
+			"name": "White rum",
+			"description": "",
+			"amount": 4.5,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Lime juice",
+			"description": "",
+			"amount": 2,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		},
+		{
+			"name": "Sugar syrup",
+			"description": "",
+			"amount": 0.5,
+			"unitUniqueIdentifier": "eaf45597-88cb-43a8-8a53-9464cf76dd5c"
+		}
+	]
+}
