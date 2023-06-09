@@ -55,7 +55,7 @@ const Navbar = () => {
             ))}
           </ul>
           <form className="d-flex" role="search">
-          <input
+            <input
               className="form-control me-1"
               type="search"
               placeholder="Search"
@@ -66,7 +66,7 @@ const Navbar = () => {
             <button
               className="btn btn-outline-primary"
               type="submit"
-              onClick={handleSubmit}
+              onClick={(event) => handleSubmitSearchClick(event)}
               aria-label="Search"
               style={{
                 display: 'flex',
