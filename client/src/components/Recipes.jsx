@@ -5,7 +5,7 @@ const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchRecipe = async () => {
       try {
         const resp = await fetch(
           `${process.env.REACT_APP_HTTP_SERVER_ADDRESS}/recipes`,
@@ -26,19 +26,25 @@ const Recipes = () => {
       }
     };
 
-    fetchData().catch(console.error);
+    fetchRecipe().catch(console.error);
   }, []);
 
-  console.log(recipes);
-
   return (
-    <div>
+    <div className="container">
       {recipes.length !== 0 ? (
-        <div>
-          {recipes.map((recipe) => <Card recipe={recipe} />)}
+        <div
+          className="d-grid justify-items-center m-5"
+          style={{
+            gridTemplateColumns: 'repeat(auto-fill, minmax(18em, 1fr))',
+            rowGap: '1em',
+          }}
+        >
+          {recipes.map((recipe) => <Card key={`${recipe.uniqueIdentifier}`} recipe={recipe} />)}
         </div>
       ) : (
-        <div />
+        <div className="d-flex justify-content-center align-items-center vh-100">
+          <h3>Nothing to display</h3>
+        </div>
       )}
     </div>
   );
