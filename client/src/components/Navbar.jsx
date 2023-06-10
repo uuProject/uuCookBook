@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { SearchOutlined } from '@ant-design/icons';
+import PropTypes from 'prop-types';
 
-const Navbar = () => {
+const Navbar = ({ searchInputValue, setSearchInputValue }) => {
   const items = [
     {
       name: 'Food',
@@ -14,15 +14,6 @@ const Navbar = () => {
   ];
 
   const [activeItemName, setActiveItemName] = useState('');
-  const [searchInputValue, setSearchInputValue] = useState('');
-
-  const handleSubmitSearchClick = (event) => {
-    event.preventDefault();
-
-    if (searchInputValue.length > 0) {
-      console.log(searchInputValue);
-    }
-  };
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -63,24 +54,16 @@ const Navbar = () => {
               onChange={(event) => handleChange(event)}
               value={searchInputValue}
             />
-            <button
-              className="btn btn-outline-primary"
-              type="submit"
-              onClick={(event) => handleSubmitSearchClick(event)}
-              aria-label="Search"
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <SearchOutlined />
-            </button>
           </form>
         </div>
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  searchInputValue: PropTypes.string.isRequired,
+  setSearchInputValue: PropTypes.func.isRequired,
 };
 
 export default Navbar;

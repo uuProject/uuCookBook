@@ -24,11 +24,7 @@ Recipe.propTypes = {
     name: PropTypes.string,
     image: PropTypes.string,
     description: PropTypes.string,
-  }),
-};
-
-Recipe.defaultProps = {
-  recipe: null, // Provide a default value of null for the recipe prop
+  }).isRequired,
 };
 
 export default Recipe;

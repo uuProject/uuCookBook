@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import Card from './Card';
 
-const Recipes = () => {
+const Recipes = ({ searchInputValue }) => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -29,14 +30,27 @@ const Recipes = () => {
     fetchRecipe().catch(console.error);
   }, []);
 
+  const filteredRecipes = [];
+
+  if (searchInputValue !== 0) {
+    recipes.forEach((recipe) => {
+      if (recipe.name.toLowerCase() === searchInputValue.toLowerCase()) {
+        filteredRecipes.push(recipe);
+      }
+    });
+  }
+
   return (
-    <div className="container">
-      {recipes.length !== 0 ? (
+    <div className="container m-5">
+      {filteredRecipes.length !== 0 ? (
         <div
-          className="d-grid justify-items-center m-5"
+          className="d-grid justify-items-center align-items-center"
           style={{
             gridTemplateColumns: 'repeat(auto-fill, minmax(18em, 1fr))',
+            gridAutoRows: '20em',
+            columnGap: '1em',
             rowGap: '1em',
+            columns: '4em',
           }}
         >
           {recipes.map((recipe) => <Card key={`${recipe.uniqueIdentifier}`} recipe={recipe} />)}
@@ -48,6 +62,10 @@ const Recipes = () => {
       )}
     </div>
   );
+};
+
+Recipes.propTypes = {
+  searchInputValue: PropTypes.string.isRequired,
 };
 
 export default Recipes;

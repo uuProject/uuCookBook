@@ -3,23 +3,16 @@ import PropTypes from 'prop-types';
 import { InfoCircleOutlined } from '@ant-design/icons';
 
 const Card = ({ recipe }) => (
-  <div
-    className="card"
-    style={{
-      width: '18rem',
-      margin: '0.2rem',
-    }}
-  >
+  <div className="card h-100">
     <img
-      className="card-img-top"
+      className="card-img-top h-75"
       src={`${process.env.REACT_APP_FILE_SERVER_ADDRESS}/${recipe.image}`}
       alt={recipe.name}
     />
-    <div className="card-body">
-      <h5 className="card-title">{recipe.name}</h5>
-      <p className="card-text">{recipe.description}</p>
+    <div className="card-body d-flex justify-content-between align-items-center">
+      <span className="card-title fw-bold">{recipe.name}</span>
       <button
-        className="btn btn-primary"
+        className="btn btn-primary d-flex align-middle justify-content-center"
         type="submit"
         onClick={() => {
           console.log('HH');
