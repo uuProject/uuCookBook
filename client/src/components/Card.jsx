@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { InfoCircleOutlined } from '@ant-design/icons';
 
 const Card = ({ recipe }) => (
   <div
@@ -17,7 +18,15 @@ const Card = ({ recipe }) => (
     <div className="card-body">
       <h5 className="card-title">{recipe.name}</h5>
       <p className="card-text">{recipe.description}</p>
-      <a href="/#" className="btn btn-primary">Detail</a>
+      <button
+        className="btn btn-primary"
+        type="submit"
+        onClick={() => {
+          console.log('HH');
+        }}
+      >
+        <InfoCircleOutlined />
+      </button>
     </div>
   </div>
 );
