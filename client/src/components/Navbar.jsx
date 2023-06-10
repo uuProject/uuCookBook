@@ -16,7 +16,7 @@ const Navbar = ({ searchInputValue, setSearchInputValue }) => {
           className="navbar-brand d-flex justify-content-center align-items-center"
           href="/#"
         >
-          <ExperimentOutlined />
+          <ExperimentOutlined style={{ fontSize: '1.5em' }} />
         </a>
         <div className="" id="navbarSupportedContent">
           <form role="search" onSubmit={(event) => event.preventDefault()}>
