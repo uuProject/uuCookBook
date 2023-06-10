@@ -1,35 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { InfoCircleOutlined } from '@ant-design/icons';
+import RecipeDetail from './RecipeDetail';
 
-const Card = ({ recipe }) => (
+const Card = ({ recipe }) => {
+  const [modalState, setModalState] = useState(false);
+  const Toggle = () => setModalState(!modalState);
+
   <div
-    className="card"
-    style={{
+      className="card"
+      style={{
       width: '18rem',
       margin: '0.2rem',
     }}
-  >
-    <img
+    >
+      <img
       className="card-img-top"
       src={`${process.env.REACT_APP_FILE_SERVER_ADDRESS}/${recipe.image}`}
       alt={recipe.name}
     />
-    <div className="card-body">
+      <div className="card-body">
       <h5 className="card-title">{recipe.name}</h5>
       <p className="card-text">{recipe.description}</p>
       <button
-        className="btn btn-primary"
-        type="submit"
-        onClick={() => {
-          console.log('HH');
-        }}
-      >
-        <InfoCircleOutlined />
-      </button>
+          className="btn btn-primary"
+          type="submit"
+          onClick={() => Toggle()}
+        >
+          <RecipeDetail show={modalState} />
+
+          <InfoCircleOutlined />
+        </button>
     </div>
-  </div>
-);
+    </div>;
+};
 
 Card.propTypes = {
   recipe: PropTypes.shape({
