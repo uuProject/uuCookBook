@@ -19,6 +19,8 @@ func newRouter(h Handler) *mux.Router {
 
 	router.HandleFunc("/units", h.Units).Methods(http.MethodGet)
 
+	router.HandleFunc("/images", h.AddImage).Methods(http.MethodPost)
+
 	return router
 }
 

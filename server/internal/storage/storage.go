@@ -29,7 +29,7 @@ const (
 
 	recipesDir = "recipes"
 	unitsDir   = "units"
-	imagesDir  = "public/images"
+	imagesDir  = "public"
 )
 
 var (
