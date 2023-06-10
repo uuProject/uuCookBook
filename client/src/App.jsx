@@ -1,13 +1,13 @@
 import React from 'react';
-// import Navbar from './components/Navbar';
+import Navbar from './components/Navbar';
+import Recipes from './components/Recipes';
 // import Card from './components/Card';
-import Recipe from './components/Recipe';
+// import Recipe from './components/Recipe';
 
 const App = () => (
   <div className="App">
-    {/* <Navbar /> */}
-    {/* <Card /> */}
-    <Recipe />
+    <Navbar />
+    <Recipes />
   </div>
 );
 
