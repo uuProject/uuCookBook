@@ -30,18 +30,24 @@ const Recipes = ({ searchInputValue }) => {
     fetchRecipe().catch(console.error);
   }, []);
 
-  const filteredRecipes = [];
+  const filteredRecipes = [...recipes].filter((recipe) => {
+    if (searchInputValue.length < 2) {
+      return true;
+    }
 
-  if (searchInputValue !== 0) {
-    recipes.forEach((recipe) => {
-      if (recipe.name.toLowerCase() === searchInputValue.toLowerCase()) {
-        filteredRecipes.push(recipe);
+    const ss = recipe.name.split(' ');
+
+    for (let i = 0; i < ss.length; i += 1) {
+      if (ss[i].toLowerCase() === searchInputValue.toLowerCase()) {
+        return true;
       }
-    });
-  }
+    }
+
+    return false;
+  });
 
   return (
-    <div className="container m-5">
+    <div className="container mt-5">
       {filteredRecipes.length !== 0 ? (
         <div
           className="d-grid justify-items-center align-items-center"
@@ -53,7 +59,7 @@ const Recipes = ({ searchInputValue }) => {
             columns: '4em',
           }}
         >
-          {recipes.map((recipe) => <Card key={`${recipe.uniqueIdentifier}`} recipe={recipe} />)}
+          {filteredRecipes.map((recipe) => <Card key={`${recipe.uniqueIdentifier}`} recipe={recipe} />)}
         </div>
       ) : (
         <div className="d-flex justify-content-center align-items-center vh-100">

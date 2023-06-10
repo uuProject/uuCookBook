@@ -3,14 +3,14 @@ import Navbar from './components/Navbar';
 import Recipes from './components/Recipes';
 
 const App = () => {
-    const [searchInputValue, setSearchInputValue] = useState('');
+  const [searchInputValue, setSearchInputValue] = useState('');
 
-    return (
-        <div className="App">
-            <Navbar searchInputValue={searchInputValue} setSearchInputValue={setSearchInputValue} />
+  return (
+    <div className="App">
+      <Navbar searchInputValue={searchInputValue} setSearchInputValue={setSearchInputValue} />
       <Recipes searchInputValue={searchInputValue} />
-        </div>
-    )
+    </div>
+  );
 };
 
 export default App;

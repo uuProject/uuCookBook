@@ -1,20 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { ExperimentOutlined } from '@ant-design/icons';
 
 const Navbar = ({ searchInputValue, setSearchInputValue }) => {
-  const items = [
-    {
-      name: 'Food',
-      link: '/#',
-    },
-    {
-      name: 'Drinks',
-      link: '/#',
-    },
-  ];
-
-  const [activeItemName, setActiveItemName] = useState('');
-
   const handleChange = (event) => {
     event.preventDefault();
 
@@ -23,29 +11,15 @@ const Navbar = ({ searchInputValue, setSearchInputValue }) => {
 
   return (
     <nav className="navbar navbar-expand navbar-light bg-light">
-      <div className="container-fluid">
+      <div className="container-fluid d-flex justify-content-between">
         <a
-          className="navbar-brand"
+          className="navbar-brand d-flex justify-content-center align-items-center"
           href="/#"
-          onClick={() => setActiveItemName('')}
         >
-          Cook Book
+          <ExperimentOutlined />
         </a>
-        <div className="collapse navbar-collapse mx-2d-flex justify-content-between" id="navbarSupportedContent">
-          <ul className="navbar-nav">
-            {items.map(({ name, link }) => (
-              <li className="nav-item">
-                <a
-                  className={`nav-link ${activeItemName === name ? 'active' : ''}`}
-                  href={link}
-                  onClick={() => setActiveItemName(name)}
-                >
-                  {name}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <form className="d-flex" role="search">
+        <div className="" id="navbarSupportedContent">
+          <form role="search" onSubmit={(event) => event.preventDefault()}>
             <input
               className="form-control me-1"
               type="search"
