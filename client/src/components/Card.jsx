@@ -7,32 +7,31 @@ const Card = ({ recipe }) => {
   const [modalState, setModalState] = useState(false);
   const Toggle = () => setModalState(!modalState);
 
-  <div
-      className="card"
-      style={{
+  <div className='card'
+    style={{
       width: '18rem',
       margin: '0.2rem',
     }}
-    >
-      <img
+  >
+    <img
       className="card-img-top"
       src={`${process.env.REACT_APP_FILE_SERVER_ADDRESS}/${recipe.image}`}
       alt={recipe.name}
     />
-      <div className="card-body">
+    <div className="card-body">
       <h5 className="card-title">{recipe.name}</h5>
       <p className="card-text">{recipe.description}</p>
       <button
-          className="btn btn-primary"
-          type="submit"
-          onClick={() => Toggle()}
-        >
-          <RecipeDetail show={modalState} />
+        className="btn btn-primary"
+        type="submit"
+        onClick={() => Toggle()}
+      >
+        <RecipeDetail show={modalState} />
 
-          <InfoCircleOutlined />
-        </button>
+        <InfoCircleOutlined />
+      </button>
     </div>
-    </div>;
+  </div>;
 };
 
 Card.propTypes = {
