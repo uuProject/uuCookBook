@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { InfoCircleOutlined } from '@ant-design/icons';
-import RecipeDetail from './RecipeDetail';
 
-const Card = ({ recipe, detailModalState, setDetailModalState }) => {
+const Card = ({ recipe }) => {
   const [modalState, setModalState] = useState(false);
   const Toggle = () => setModalState(!modalState);
 
@@ -35,12 +34,8 @@ Card.propTypes = {
     name: PropTypes.string,
     image: PropTypes.string,
     description: PropTypes.string,
-  }),
+  }).isRequired,
 
-};
-
-Card.defaultProps = {
-  recipe: null, // Provide a default value of null for the recipe prop
 };
 
 export default Card;
