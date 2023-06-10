@@ -7,6 +7,7 @@ import (
 	"syscall"
 
 	"server/cmd/config"
+	"server/internal/fileserver"
 	"server/internal/http"
 	"server/internal/storage"
 )
@@ -31,6 +32,23 @@ func main() {
 	go func() {
 		if err := server.ListenAndServe(); err != nil {
 			log.Fatalf("http server listen and server failed: %v", err)
+		}
+	}()
+
+	fileServer := fileserver.New(
+		cfg.FileServer.Address,
+		cfg.Storage.ImagesPath,
+	)
+
+	defer func() {
+		if err := fileServer.Close(); err != nil {
+			log.Fatalf("file server close failed: %v", err)
+		}
+	}()
+
+	go func() {
+		if err := fileServer.ListenAndServe(); err != nil {
+			log.Fatalf("file server listen and server failed: %v", err)
 		}
 	}()
 

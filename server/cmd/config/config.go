@@ -6,8 +6,12 @@ type Config struct {
 	HttpServer struct {
 		Address string `env:"HTTP_SERVER_ADDRESS" default:"0.0.0.0:8080"`
 	}
+	FileServer struct {
+		Address string `env:"FILE_SERVER_ADDRESS" default:"0.0.0.0:3030"`
+	}
 	Storage struct {
-		Path string `env:"STORAGE_PATH"`
+		Path       string `env:"STORAGE_PATH"`
+		ImagesPath string `env:"STORAGE_IMAGES_PATH"`
 	}
 }
 

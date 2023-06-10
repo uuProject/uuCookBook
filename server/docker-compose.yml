@@ -1,0 +1,27 @@
+version: "3.8"
+
+volumes:
+  db1:
+
+networks:
+  uu_cook_book:
+    name: uu_cook_book
+    external: true
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    hostname: uu_cook_book_server
+    container_name: uu_cook_book_server
+    networks:
+      - uu_cook_book
+    volumes:
+      - .:/go/src/app
+    ports:
+      - "8080:8080"
+      - "3030:3030"
+    environment:
+      STORAGE_PATH: "../storage"
+      STORAGE_IMAGES_PATH: "../public"
