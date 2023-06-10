@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const readJSONFiles = require('../readJSONFiles').default;
-
 const Card = ({ recipe }) => {
   if (!recipe) {
     return null; // Add a null check to handle undefined recipe
