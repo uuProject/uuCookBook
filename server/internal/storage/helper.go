@@ -14,6 +14,6 @@ func unitPath(path string, uniqueIdentifier uuid.UUID) string {
 	return fmt.Sprintf("%s/%s/%s%s", path, unitsDir, uniqueIdentifier, jsonFileExtension)
 }
 
-func imagePath(path string, uniqueIdentifier uuid.UUID) string {
-	return fmt.Sprintf("%s/%s/%s", path, imagesDir, uniqueIdentifier)
+func imagePath(path string, name string) string {
+	return fmt.Sprintf("%s/%s/%s", path, imagesDir, name)
 }

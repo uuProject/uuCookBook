@@ -1,6 +1,7 @@
 package http
 
 import (
+	"bytes"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -37,6 +38,27 @@ func (h *handler) Recipes(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *handler) AddRecipe(w http.ResponseWriter, r *http.Request) {
+	if err := r.ParseMultipartForm(32 << 20); err != nil {
+		WriteInternalServerError(w, err)
+		return
+	}
+
+	image, header, err := r.FormFile("image")
+	if err != nil {
+		WriteBadRequestError(w, err)
+		return
+	}
+	defer func() {
+		image.Close()
+	}()
+
+	var imageBuff = new(bytes.Buffer)
+
+	if _, err := io.Copy(imageBuff, image); err != nil {
+		WriteInternalServerError(w, err)
+		return
+	}
+
 	b, err := io.ReadAll(r.Body)
 	if err != nil {
 		WriteBadRequestError(w, err)
@@ -68,6 +90,11 @@ func (h *handler) AddRecipe(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
+		WriteInternalServerError(w, err)
+		return
+	}
+
+	if err := h.st.AddImage(header.Filename, imageBuff); err != nil {
 		WriteInternalServerError(w, err)
 		return
 	}

@@ -1,6 +1,7 @@
 package storage
 
 import (
+	"bytes"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -19,6 +20,8 @@ type Storage interface {
 
 	Units() ([]Unit, error)
 	Unit(uniqueIdentifier uuid.UUID) (*Unit, error)
+
+	AddImage(name string, buff *bytes.Buffer) error
 }
 
 const (
@@ -26,7 +29,7 @@ const (
 
 	recipesDir = "recipes"
 	unitsDir   = "units"
-	imagesDir  = "images"
+	imagesDir  = "public/images"
 )
 
 var (
@@ -210,6 +213,18 @@ func (s *storage) Unit(uniqueIdentifier uuid.UUID) (*Unit, error) {
 	}
 
 	return &unit, err
+}
+
+func (s *storage) AddImage(name string, buff *bytes.Buffer) error {
+	if err := os.WriteFile(
+		imagePath(s.path, name),
+		buff.Bytes(),
+		os.ModePerm,
+	); err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func New(path string) Storage {
