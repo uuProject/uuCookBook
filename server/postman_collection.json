@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "a0bc40d2-9fe3-448f-b4b3-5ca1ad21662d",
+		"name": "uu-cook-book",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14425277"
+	},
+	"item": [
+		{
+			"name": "/recipes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HTTP_SERVER_HOST}}/recipes",
+					"host": [
+						"{{HTTP_SERVER_HOST}}"
+					],
+					"path": [
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/recipes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uniqueIdentifier\": \"4a8e478f-048a-4da5-a2a5-3c2d49166f15\",\n    \"name\": \"Italian American\",\n    \"description\": \"Add all ingredients and stir.\",\n    \"preparationTime\": 10,\n    \"servings\": 2,\n    \"image\": \"4a8e478f-048a-4da5-a2a5-3c2d49166f15.jpg\",\n    \"ingredients\": [\n        {\n            \"name\": \"Bourbon\",\n            \"description\": \"\",\n            \"amount\": 2,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Campari\",\n            \"description\": \"\",\n            \"amount\": 0.75,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Maply syrup\",\n            \"description\": \"\",\n            \"amount\": 0.1,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Lemon juice\",\n            \"description\": \"\",\n            \"amount\": 0.05,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Amaro Nonino\",\n            \"description\": \"\",\n            \"amount\": 0.75,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HTTP_SERVER_HOST}}/recipes",
+					"host": [
+						"{{HTTP_SERVER_HOST}}"
+					],
+					"path": [
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/recipes/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uniqueIdentifier\": \"4a8e478f-048a-4da5-a2a5-3c2d49166f15\",\n    \"name\": \"Italian American\",\n    \"description\": \"Add all ingredients and stir.\",\n    \"preparationTime\": 10,\n    \"servings\": 2,\n    \"image\": \"4a8e478f-048a-4da5-a2a5-3c2d49166f15.jpg\",\n    \"ingredients\": [\n        {\n            \"name\": \"Bourbon\",\n            \"description\": \"\",\n            \"amount\": 2,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Campari\",\n            \"description\": \"\",\n            \"amount\": 0.75,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Maply syrup\",\n            \"description\": \"\",\n            \"amount\": 0.1,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Lemon juice\",\n            \"description\": \"\",\n            \"amount\": 0.05,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Amaro Nonino\",\n            \"description\": \"\",\n            \"amount\": 0.75,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HTTP_SERVER_HOST}}/recipes/{{ID}}",
+					"host": [
+						"{{HTTP_SERVER_HOST}}"
+					],
+					"path": [
+						"recipes",
+						"{{ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/recipes/:id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uniqueIdentifier\": \"4a8e478f-048a-4da5-a2a5-3c2d49166f15\",\n    \"name\": \"American Italian\",\n    \"description\": \"Add all ingredients and stir.\",\n    \"preparationTime\": 10,\n    \"servings\": 2,\n    \"image\": \"4a8e478f-048a-4da5-a2a5-3c2d49166f15.jpg\",\n    \"ingredients\": [\n        {\n            \"name\": \"Bourbon\",\n            \"description\": \"\",\n            \"amount\": 2,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Campari\",\n            \"description\": \"\",\n            \"amount\": 0.75,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Maply syrup\",\n            \"description\": \"\",\n            \"amount\": 0.1,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Lemon juice\",\n            \"description\": \"\",\n            \"amount\": 0.05,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Amaro Nonino\",\n            \"description\": \"\",\n            \"amount\": 0.75,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HTTP_SERVER_HOST}}/recipes/{{ID}}",
+					"host": [
+						"{{HTTP_SERVER_HOST}}"
+					],
+					"path": [
+						"recipes",
+						"{{ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/recipes/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uniqueIdentifier\": \"4a8e478f-048a-4da5-a2a5-3c2d49166f15\",\n    \"name\": \"American Italian\",\n    \"description\": \"Add all ingredients and stir.\",\n    \"preparationTime\": 10,\n    \"servings\": 2,\n    \"image\": \"4a8e478f-048a-4da5-a2a5-3c2d49166f15.jpg\",\n    \"ingredients\": [\n        {\n            \"name\": \"Bourbon\",\n            \"description\": \"\",\n            \"amount\": 2,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Campari\",\n            \"description\": \"\",\n            \"amount\": 0.75,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Maply syrup\",\n            \"description\": \"\",\n            \"amount\": 0.1,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Lemon juice\",\n            \"description\": \"\",\n            \"amount\": 0.05,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Amaro Nonino\",\n            \"description\": \"\",\n            \"amount\": 0.75,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HTTP_SERVER_HOST}}/recipes/{{ID}}",
+					"host": [
+						"{{HTTP_SERVER_HOST}}"
+					],
+					"path": [
+						"recipes",
+						"{{ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/units",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HTTP_SERVER_HOST}}/units",
+					"host": [
+						"{{HTTP_SERVER_HOST}}"
+					],
+					"path": [
+						"units"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/images",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/karelschneider/Desktop/4a8e478f-048a-4da5-a2a5-3c2d49166f15.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HTTP_SERVER_HOST}}/images",
+					"host": [
+						"{{HTTP_SERVER_HOST}}"
+					],
+					"path": [
+						"images"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HTTP_SERVER_HOST",
+			"value": "http://127.0.0.1:8080",
+			"type": "string"
+		},
+		{
+			"key": "ID",
+			"value": "4a8e478f-048a-4da5-a2a5-3c2d49166f15",
+			"type": "string"
+		}
+	]
+}

@@ -22,6 +22,7 @@ type Storage interface {
 	Unit(uniqueIdentifier uuid.UUID) (*Unit, error)
 
 	AddImage(name string, buff *bytes.Buffer) error
+	DeleteImage(uniqueIdentifier uuid.UUID) error
 }
 
 const (
@@ -221,6 +222,39 @@ func (s *storage) AddImage(name string, buff *bytes.Buffer) error {
 		buff.Bytes(),
 		os.ModePerm,
 	); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (s *storage) DeleteImage(uniqueIdentifier uuid.UUID) error {
+	files, err := os.ReadDir(fmt.Sprintf("%s/%s", s.path, imagesDir))
+	if err != nil {
+		return err
+	}
+
+	var imageName string
+
+FilesLoop:
+	for _, file := range files {
+		for _, imageUniqueID := range strings.Split(file.Name(), ".") {
+			if uniqueIdentifier.String() == imageUniqueID {
+				imageName = file.Name()
+				continue FilesLoop
+			}
+		}
+	}
+
+	if imageName == "" {
+		return nil
+	}
+
+	if err := os.Remove(imagePath(s.path, imageName)); err != nil {
+		if errors.Is(err, os.ErrNotExist) {
+			return ErrFileNotFound
+		}
+
 		return err
 	}
 

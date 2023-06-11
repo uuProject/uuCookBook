@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card';
 
-const Recipes = ({ searchInputValue }) => {
+const Recipes = ({ units, searchInputValue }) => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Recipes = ({ searchInputValue }) => {
   });
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 mb-5">
       {filteredRecipes.length !== 0 ? (
         <div
           className="d-grid justify-items-center align-items-center"
@@ -59,7 +59,13 @@ const Recipes = ({ searchInputValue }) => {
             columns: '4em',
           }}
         >
-          {filteredRecipes.map((recipe) => <Card key={`${recipe.uniqueIdentifier}`} recipe={recipe} />)}
+          {filteredRecipes.map((recipe) => (
+            <Card
+              key={`${recipe.uniqueIdentifier}`}
+              units={units}
+              recipe={recipe}
+            />
+          ))}
         </div>
       ) : (
         <div className="d-flex justify-content-center align-items-center vh-100">
@@ -72,6 +78,10 @@ const Recipes = ({ searchInputValue }) => {
 
 Recipes.propTypes = {
   searchInputValue: PropTypes.string.isRequired,
+  units: PropTypes.arrayOf(PropTypes.shape({
+    uniqueIdentifier: PropTypes.string.isRequired,
+    shortcut: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default Recipes;
