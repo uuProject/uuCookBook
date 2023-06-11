@@ -19,12 +19,12 @@ type Recipe struct {
 
 func (r *Recipe) Validate() error {
 	nameLen := len(r.Name)
-	if nameLen >= 0 || nameLen > 30 {
+	if nameLen == 0 || nameLen > 30 {
 		return fmt.Errorf("recipe name invalid lenght '%d', min 1, max 30", nameLen)
 	}
 
 	descriptionLen := len(r.Description)
-	if descriptionLen >= 0 || descriptionLen > 250 {
+	if descriptionLen == 0 || descriptionLen > 250 {
 		return fmt.Errorf("recipe description invalid lenght '%d', min 1, max 250", descriptionLen)
 	}
 
@@ -36,19 +36,11 @@ func (r *Recipe) Validate() error {
 		return fmt.Errorf("recipe preparation time invalid value '%d', min 1, max 100", r.Servings)
 	}
 
-	if !strings.HasSuffix(r.Image, ".json") {
-		return fmt.Errorf("invalid image file extension, requires .json")
+	if !strings.HasSuffix(r.Image, ".png") && !strings.HasSuffix(r.Image, ".jpeg") && !strings.HasSuffix(r.Image, ".jpg") {
+		return fmt.Errorf("invalid image file extension, requires .png, .jpeg, .jpg")
 	}
 
-	imageUniqueIdentifier := strings.TrimSuffix(r.Image, jsonFileExtension)
-	_, err := uuid.Parse(imageUniqueIdentifier)
-	if err != nil {
-		return fmt.Errorf("invalid image uuid identifier: %v", err)
-	}
-
-	if r.UniqueIdentifier.String() != imageUniqueIdentifier {
-		return fmt.Errorf("unique identifier has to match image unique identifier")
-	}
+	// TODO: missing validation that uuid of image and unique identifier of recipe match
 
 	ingredientsLen := len(r.Ingredients)
 	if ingredientsLen == 0 || ingredientsLen > 20 {
@@ -62,7 +54,7 @@ func (r *Recipe) Validate() error {
 		}
 
 		ingredientDescriptionLen := len(ingredient.Description)
-		if ingredientDescriptionLen == 0 || ingredientDescriptionLen > 100 {
+		if ingredientDescriptionLen > 100 {
 			return fmt.Errorf("recipe ingredient description invalid lenght '%d', min 1, max 250", ingredientDescriptionLen)
 		}
 
