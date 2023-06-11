@@ -28,11 +28,11 @@ func (r *Recipe) Validate() error {
 		return fmt.Errorf("recipe description invalid lenght '%d', min 1, max 250", descriptionLen)
 	}
 
-	if r.PreparationTime == 0 || r.PreparationTime > 10080 {
+	if r.PreparationTime <= 0 || r.PreparationTime > 10080 {
 		return fmt.Errorf("recipe preparation time invalid value '%d', min 1, max 10800", r.PreparationTime)
 	}
 
-	if r.Servings == 0 || r.Servings > 100 {
+	if r.Servings <= 0 || r.Servings > 100 {
 		return fmt.Errorf("recipe preparation time invalid value '%d', min 1, max 100", r.Servings)
 	}
 
@@ -52,12 +52,12 @@ func (r *Recipe) Validate() error {
 
 	for _, ingredient := range r.Ingredients {
 		ingredientNameLen := len(ingredient.Name)
-		if ingredientNameLen >= 0 || ingredientNameLen > 30 {
+		if ingredientNameLen == 0 || ingredientNameLen > 30 {
 			return fmt.Errorf("recipe ingredient name invalid lenght '%d', min 1, max 30", ingredientNameLen)
 		}
 
 		ingredientDescriptionLen := len(ingredient.Description)
-		if ingredientDescriptionLen >= 0 || ingredientDescriptionLen > 250 {
+		if ingredientDescriptionLen == 0 || ingredientDescriptionLen > 100 {
 			return fmt.Errorf("recipe ingredient description invalid lenght '%d', min 1, max 250", ingredientDescriptionLen)
 		}
 

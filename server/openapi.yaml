@@ -1,0 +1,254 @@
+openapi: 3.0.3
+info:
+  title: UU Cook Book
+  version: 1.0.0
+
+tags:
+  - name: Recipes
+    description: Endpoints handling recipes processes
+  - name: Units
+    description: Endpoints handling units processes
+  - name: Images
+    description: Endpoints handling images processes
+
+paths:
+  "/recipes":
+    get:
+      tags:
+        - Recipes
+      operationId: recipes
+      responses:
+        200:
+          $ref: "#/components/responses/Recipes"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+
+    post:
+      tags:
+        - Recipes
+      operationId: create_recipe
+      requestBody:
+        $ref: "#/components/requestBodies/CreateRecipe"
+      responses:
+        204:
+          $ref: "#/components/responses/NoContent"
+        400:
+          $ref: "#/components/responses/BadRequestError"
+        404:
+          $ref: "#/components/responses/NotFoundError"
+        409:
+          $ref: "#/components/responses/ConflictError"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+
+  "/recipes/{id}":
+    get:
+      tags:
+        - Recipes
+      operationId: recipe
+      parameters:
+        - $ref: "#/components/parameters/UniqueIdentifier"
+      responses:
+        204:
+          $ref: "#/components/responses/NoContent"
+        400:
+          $ref: "#/components/responses/BadRequestError"
+        404:
+          $ref: "#/components/responses/NotFoundError"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+
+    put:
+      tags:
+        - Recipes
+      operationId: update_recipe
+      parameters:
+        - $ref: "#/components/parameters/UniqueIdentifier"
+      responses:
+        204:
+          $ref: "#/components/responses/NoContent"
+        400:
+          $ref: "#/components/responses/BadRequestError"
+        404:
+          $ref: "#/components/responses/NotFoundError"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+
+    delete:
+      tags:
+        - Recipes
+      operationId: delete_recipe
+      parameters:
+        - $ref: "#/components/parameters/UniqueIdentifier"
+      responses:
+        204:
+          $ref: "#/components/responses/NoContent"
+        400:
+          $ref: "#/components/responses/BadRequestError"
+        404:
+          $ref: "#/components/responses/NotFoundError"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+
+  "/units":
+    get:
+      tags:
+        - Units
+      operationId: units
+      responses:
+        200:
+          $ref: "#/components/responses/Units"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+
+  "/images":
+    post:
+      tags:
+        - Images
+      operationId: create_images
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: file
+      responses:
+        204:
+          $ref: "#/components/responses/Units"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+
+components:
+  parameters:
+    UniqueIdentifier:
+      required: true
+      in: path
+      name: login
+      schema:
+        $ref: "#/components/schemas/UniqueIdentifier"
+
+  schemas:
+    UniqueIdentifier:
+      type: string
+      format: uuid
+      example: "4a8e478f-048a-4da5-a2a5-3c2d49166f15"
+
+    Recipe:
+      type: object
+      properties:
+        uniqueIdentifier:
+          $ref: "#/components/schemas/UniqueIdentifier"
+        name:
+          type: string
+          minimum: 1
+          maximum: 30
+          example: 'Piña Colada'
+        description:
+          type: string
+          minimum: 1
+          maximum: 250
+          example: "In a shaker, mix the cream, rum, pineapple juice and coconut syrup in the prescribed amount. Stir and you get a magic called Pina Colada. Finally, garnish with mint leaves."
+        preparationTime:
+          type: number
+          minimum: 1
+          maximum: 10800
+          example: 40
+        servings:
+          type: number
+          minimum: 100
+          maximum: 10080
+          example: 40
+        image:
+          description: The id has to be linked with the unique identifier of the recipe
+          type: string
+          format: uuid with image extension
+          example: '4a8e478f-048a-4da5-a2a5-3c2d49166f15.png'
+        ingredients:
+          type: array
+          items:
+            $ref: "#/components/schemas/Ingredient"
+
+    Ingredient:
+      type: object
+      properties:
+        name:
+          type: string
+          minimum: 1
+          maximum: 30
+          example: 'Cuban rum'
+        description:
+          type: string
+          minimum: 1
+          maximum: 100
+          example: 'White'
+        amount:
+          type: string
+          minimum: 1
+          maximum: 50
+          example: 1
+        unitUniqueIdentifier:
+          $ref: "#/components/schemas/UniqueIdentifier"
+
+    Unit:
+      type: object
+      properties:
+        uniqueIdentifier:
+          $ref: "#/components/schemas/UniqueIdentifier"
+        shortcut:
+          type: string
+          example: 'cl'
+
+  requestBodies:
+    CreateRecipe:
+      description: Create recipe
+      content:
+        "application/json":
+          schema:
+            $ref: "#/components/schemas/Recipe"
+
+  responses:
+    Recipes:
+      description: Retrieve all recipes
+      content:
+        "application/json":
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/Recipe"
+    Recipe:
+      description: Retrieve a recipe
+      content:
+        "application/json":
+          schema:
+            $ref: "#/components/schemas/Recipe"
+
+    Units:
+      description: Retrieve all units
+      content:
+        "application/json":
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/Unit"
+
+    NoContent:
+      description: No content
+
+    BadRequestError:
+      description: Bad request error
+      content:
+        "application/json":
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Validation failed"
+
+    NotFoundError:
+      description: Not found error
+
+    ConflictError:
+      description: Conflict error
+
+    InternalServerError:
+      description: Internal server error

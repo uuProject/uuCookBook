@@ -82,33 +82,6 @@
 		{
 			"name": "/recipes/:id",
 			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"uniqueIdentifier\": \"4a8e478f-048a-4da5-a2a5-3c2d49166f15\",\n    \"name\": \"Italian American\",\n    \"description\": \"Add all ingredients and stir.\",\n    \"preparationTime\": 10,\n    \"servings\": 2,\n    \"image\": \"4a8e478f-048a-4da5-a2a5-3c2d49166f15.jpg\",\n    \"ingredients\": [\n        {\n            \"name\": \"Bourbon\",\n            \"description\": \"\",\n            \"amount\": 2,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Campari\",\n            \"description\": \"\",\n            \"amount\": 0.75,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Maply syrup\",\n            \"description\": \"\",\n            \"amount\": 0.1,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Lemon juice\",\n            \"description\": \"\",\n            \"amount\": 0.05,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        },\n        {\n            \"name\": \"Amaro Nonino\",\n            \"description\": \"\",\n            \"amount\": 0.75,\n            \"unitUniqueIdentifier\": \"eaf45597-88cb-43a8-8a53-9464cf76dd5c\"\n        }\n    ]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{HTTP_SERVER_HOST}}/recipes/{{ID}}",
-					"host": [
-						"{{HTTP_SERVER_HOST}}"
-					],
-					"path": [
-						"recipes",
-						"{{ID}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/recipes/:id",
-			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
