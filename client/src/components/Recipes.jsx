@@ -31,7 +31,7 @@ const Recipes = ({ units, searchInputValue }) => {
   }, []);
 
   const filteredRecipes = [...recipes].filter((recipe) => {
-    if (searchInputValue.length < 2) {
+    if (searchInputValue.length < 3) {
       return true;
     }
 

@@ -14,7 +14,7 @@ const Navbar = ({ searchInputValue, setSearchInputValue }) => {
       <div className="container-fluid d-flex justify-content-between">
         <a
           className="navbar-brand d-flex justify-content-center align-items-center"
-          href="/#"
+          href="/"
         >
           <ExperimentOutlined style={{ fontSize: '1.5em' }} />
         </a>
