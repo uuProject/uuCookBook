@@ -17,7 +17,7 @@ const RecipeDetail = ({
         display: modalState ? 'flex' : 'none',
       }}
     >
-      <div className="modal-dialog" role="document">
+      <div className="modal-dialog w-100" role="document">
         <div className="modal-content shadow-lg">
           <div className="modal-header">
             <h5 className="modal-title">{recipe.name}</h5>
