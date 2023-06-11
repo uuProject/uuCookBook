@@ -1,29 +1,8 @@
-import React, { useState } from 'react';
-import { SearchOutlined } from '@ant-design/icons';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { ExperimentOutlined } from '@ant-design/icons';
 
-const Navbar = () => {
-  const items = [
-    {
-      name: 'Food',
-      link: '/#',
-    },
-    {
-      name: 'Drinks',
-      link: '/#',
-    },
-  ];
-
-  const [activeItemName, setActiveItemName] = useState('');
-  const [searchInputValue, setSearchInputValue] = useState('');
-
-  const handleSubmitSearchClick = (event) => {
-    event.preventDefault();
-
-    if (searchInputValue.length > 0) {
-      console.log(searchInputValue);
-    }
-  };
-
+const Navbar = ({ searchInputValue, setSearchInputValue }) => {
   const handleChange = (event) => {
     event.preventDefault();
 
@@ -32,29 +11,15 @@ const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand navbar-light bg-light">
-      <div className="container-fluid">
+      <div className="container-fluid d-flex justify-content-between">
         <a
-          className="navbar-brand"
+          className="navbar-brand d-flex justify-content-center align-items-center"
           href="/#"
-          onClick={() => setActiveItemName('')}
         >
-          Cook Book
+          <ExperimentOutlined style={{ fontSize: '1.5em' }} />
         </a>
-        <div className="collapse navbar-collapse mx-2d-flex justify-content-between" id="navbarSupportedContent">
-          <ul className="navbar-nav">
-            {items.map(({ name, link }) => (
-              <li className="nav-item">
-                <a
-                  className={`nav-link ${activeItemName === name ? 'active' : ''}`}
-                  href={link}
-                  onClick={() => setActiveItemName(name)}
-                >
-                  {name}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <form className="d-flex" role="search">
+        <div className="" id="navbarSupportedContent">
+          <form role="search" onSubmit={(event) => event.preventDefault()}>
             <input
               className="form-control me-1"
               type="search"
@@ -63,24 +28,16 @@ const Navbar = () => {
               onChange={(event) => handleChange(event)}
               value={searchInputValue}
             />
-            <button
-              className="btn btn-outline-primary"
-              type="submit"
-              onClick={(event) => handleSubmitSearchClick(event)}
-              aria-label="Search"
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <SearchOutlined />
-            </button>
           </form>
         </div>
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  searchInputValue: PropTypes.string.isRequired,
+  setSearchInputValue: PropTypes.func.isRequired,
 };
 
 export default Navbar;
