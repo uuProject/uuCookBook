@@ -53,6 +53,11 @@ func (h *handler) AddRecipe(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if err := recipe.Validate(); err != nil {
+		WriteBadRequestError(w, err)
+		return
+	}
+
 	for _, ingredient := range recipe.Ingredients {
 		if _, err := h.st.Unit(ingredient.UnitUniqueIdentifier); err != nil {
 			if errors.Is(err, storage.ErrFileNotFound) {
@@ -119,6 +124,11 @@ func (h *handler) UpdateRecipe(w http.ResponseWriter, r *http.Request) {
 	var recipe storage.Recipe
 
 	if err := json.Unmarshal(b, &recipe); err != nil {
+		WriteBadRequestError(w, err)
+		return
+	}
+
+	if err := recipe.Validate(); err != nil {
 		WriteBadRequestError(w, err)
 		return
 	}

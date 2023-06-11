@@ -40,9 +40,14 @@ func (r *Recipe) Validate() error {
 		return fmt.Errorf("invalid image file extension, requires .json")
 	}
 
-	_, err := uuid.Parse(strings.TrimSuffix(r.Image, jsonFileExtension))
+	imageUniqueIdentifier := strings.TrimSuffix(r.Image, jsonFileExtension)
+	_, err := uuid.Parse(imageUniqueIdentifier)
 	if err != nil {
 		return fmt.Errorf("invalid image uuid identifier: %v", err)
+	}
+
+	if r.UniqueIdentifier.String() != imageUniqueIdentifier {
+		return fmt.Errorf("unique identifier has to match image unique identifier")
 	}
 
 	ingredientsLen := len(r.Ingredients)
