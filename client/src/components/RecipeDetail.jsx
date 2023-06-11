@@ -1,39 +1,81 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const RecipeDetail = ({
+  units, recipe, modalState, toggleState,
+}) => {
+  const unitsObject = units.reduce((o, unit) => (
+    Object.assign(o, { [unit.uniqueIdentifier]: unit.shortcut })), {});
 
-const RecipeDetail = ({ show }) => (
+  return (
+    <div
+      className="modal"
+      role="dialog"
+      style={{
+        zIndex: 100,
+        top: '15%',
+        display: modalState ? 'flex' : 'none',
+      }}
+    >
+      <div className="modal-dialog" role="document">
+        <div className="modal-content shadow-lg">
+          <div className="modal-header">
+            <h5 className="modal-title">{recipe.name}</h5>
+          </div>
+          <div className="modal-body">
+            <p className="fw-bold">Preparation time</p>
+            <p>{`${recipe.preparationTime} minutes`}</p>
 
-  show
+            <p className="fw-bold">Servings</p>
+            <p>{`${recipe.servings}`}</p>
 
-    ? (
-      <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-            </div>
-            <div className="modal-body">
-              <h1>hello world</h1>
-            </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary">Save changes</button>
-            </div>
+            <p className="fw-bold">Description</p>
+            <p>{recipe.description}</p>
+
+            <p className="fw-bold">Ingredients</p>
+            {recipe.ingredients.map((ingredient) => (
+              <div key={ingredient.name} className="d-flex justify-content-between">
+                <span>{ingredient.name}</span>
+
+                {ingredient.amount === 0 ? (
+                  <span>{`${unitsObject[ingredient.unitUniqueIdentifier]}`}</span>
+                ) : (
+                  <span>{`${ingredient.amount} ${unitsObject[ingredient.unitUniqueIdentifier]}`}</span>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="modal-footer">
+            <button type="button" className="btn btn-primary" onClick={() => toggleState()}>
+              Close
+            </button>
           </div>
         </div>
       </div>
-    )
-    : null
-);
-
-RecipeDetail.propTypes = {
-  show: PropTypes.bool,
+    </div>
+  );
 };
 
-RecipeDetail.defaultProps = {
-  show: false,
+RecipeDetail.propTypes = {
+  modalState: PropTypes.bool.isRequired,
+  toggleState: PropTypes.func.isRequired,
+  units: PropTypes.arrayOf(PropTypes.shape({
+    uniqueIdentifier: PropTypes.string.isRequired,
+    shortcut: PropTypes.string.isRequired,
+  })).isRequired,
+  recipe: PropTypes.shape({
+    uniqueIdentifier: PropTypes.string,
+    name: PropTypes.string,
+    image: PropTypes.string,
+    description: PropTypes.string,
+    servings: PropTypes.number,
+    preparationTime: PropTypes.number,
+    ingredients: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      amount: PropTypes.number,
+      unitUniqueIdentifier: PropTypes.string,
+    }).isRequired),
+  }).isRequired,
 };
 
 export default RecipeDetail;

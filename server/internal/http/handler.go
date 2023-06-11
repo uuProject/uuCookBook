@@ -168,6 +168,16 @@ func (h *handler) DeleteRecipe(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if err := h.st.DeleteImage(uniqueIdentifier); err != nil {
+		if errors.Is(err, storage.ErrFileNotFound) {
+			WriteNotFoundError(w)
+			return
+		}
+
+		WriteInternalServerError(w, err)
+		return
+	}
+
 	WriteNoContent(w)
 }
 
