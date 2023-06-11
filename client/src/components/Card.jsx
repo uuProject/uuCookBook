@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { InfoCircleOutlined } from '@ant-design/icons';
+import RecipeDetail from './RecipeDetail';
 
 const Card = ({ recipe }) => {
   const [modalState, setModalState] = useState(false);
@@ -23,6 +24,8 @@ const Card = ({ recipe }) => {
           <InfoCircleOutlined />
         </button>
       </div>
+      {modalState.toString()}
+      <RecipeDetail show={modalState} />
     </div>
 
   );
